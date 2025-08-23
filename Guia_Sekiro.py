@@ -50,4 +50,5 @@ Objetivo_actual: (Que final se quiere conseguir)
 11. Felicitar al usuario por todo el sufrimiento por el que tuvo que pasar
 
 #Fin del algoritmo#
-#Hasta ahora se ve muy sensillo, pero estoy seguro de que voy a sufrir codificando esto#
+#Hasta ahora se ve muy sencillo, pero estoy seguro de que voy a sufrir codificando esto#
+
