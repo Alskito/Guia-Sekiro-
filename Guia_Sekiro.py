@@ -1,3 +1,4 @@
+"""
 Algoritmo para conseguir todos los logros de sekiro
 
 #variables que voy a usar(probablemente añada mas en el futuro)#
@@ -19,8 +20,10 @@ Objetivo_actual: (Que final se quiere conseguir)
     6. Agregar en la variable que final fue conseguido
 
 -Si no
-    2. preguntar al usuario que finales ya completo 
-        Agregar en la variable que final fue conseguido
+# Aquí podría usar un ciclo while, ya que la variable no debe tener un valor mayor que 4 ni menor que 0.
+# En caso de usar strings, no debe haber un nombre distinto de los 4 finales
+    2. preguntar al usuario que finales ya completo     
+        Agregar en la variable que final fue conseguido   
     3. Ver que finales faltan por hacer
         - Final Shura
         - Final Purificación
@@ -51,4 +54,52 @@ Objetivo_actual: (Que final se quiere conseguir)
 
 #Fin del algoritmo#
 #Hasta ahora se ve muy sencillo, pero estoy seguro de que voy a sufrir codificando esto#
+"""
+
+
+logros_totales = 34
+finales_totales = 4
+
+logros_conseguidos = 0
+finales_conseguidos = 0
+
+logros_conseguidos = int(input("¿Cuántos logros has conseguido? (0 a 34): "))
+logros_conseguidos = int(input("¿Cuántos logros has conseguido? (0 a 34): "))
+#Una de las maneras en las que podria usar un ciclo while#
+while logros_conseguidos < 0 or >34
+    print("eso no es posible")
+    logros_conseguidos = int(input("¿Cuántos logros has conseguido? (0 a 34): "))
+
+while finales_conseguidos < 0 or >4
+   print("eso no es posible")
+   logros_conseguidos = int(input("¿Cuántos logros has conseguido? (0 a 34): "))
+
+logros_faltantes = logros_totales - logros_conseguidos
+finales_faltantes = finales_totales - finales_conseguidos
+
+print("Haz conseguido", logros_conseguidos,"logros y",finales_conseguidos,"finales" )
+# Como todavía no hemos visto listas ni nada de eso, este código se va a basar solamente en números.
+# Planeo cambiarlo en el futuro, pero por ahora no me voy a arriesgar a usar listas ni nada por el estilo.
+
+if logros_conseguidos == logros_totales and finales_conseguidos == finales_totales
+    print("Felicidades lograste completar Sekiro al 100%, ahora ve y completa Dark souls 3 idk")
+          
+elif logros_conseguidos != logros_totales and finales_conseguidos == finales_totales
+    print("Ya completaste todos los finales, pero todavia te faltan conseguir",logros_faltantes,"logros")
+    print("Buena suerte")
+          
+elif logros_conseguidos != logros_totales and finales_conseguidos != finales_totales
+    print("Te faltan", logros_faltantes,"logros y",finales_faltantes,"finales")   
+          
+else 
+    print("No se que hiciste, pero esto no es posible ")
+
+# Siento que está muy vacío, así que voy a calcular el porcentaje de progreso.
+
+porcentaje_juego = (logros_conseguidos / logros_totales) * 100
+#El porcentaje de finales realmente no es necesario, ya que cada final tiene un logro#
+
+print("Haz completado el",porcentaje_juego,"% del juego"  )
+
+
 
