@@ -66,6 +66,7 @@ finales_conseguidos = 0
 
 logros_conseguidos = int(input("¿Cuántos logros has conseguido? (0 a 34): "))
 os.system('cls')
+#Para limpiar la terminal y que se vea mas limpio, odio que todos los prints se acumulen#
 
 #Una de las maneras en las que podria usar un ciclo while#
 while logros_conseguidos < 0 or logros_conseguidos > 34:
@@ -107,5 +108,6 @@ porcentaje_juego = (logros_conseguidos / logros_totales) * 100
 if logros_conseguidos != logros_totales:
     print("Haz completado el %.2f" % (porcentaje_juego),"% del juego"  )
 
+#Hasta ahora es un codigo muy sencillo y poco util, pero creo que es suficiente para el avance 2#
 
 
