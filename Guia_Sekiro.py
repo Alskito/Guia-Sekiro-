@@ -61,8 +61,9 @@ import os
 logros_totales = 34
 finales_totales = 4
 
-#Una de las maneras en las que podria usar un ciclo while#
-def pedir_logros()
+#Funciones para pedir la cantidad de logros y finales que ya se consiguieron
+#Bastante inutiles desde mi punto de vista pero pus funciones
+def pedir_logros():
     logros_conseguidos = int(input("¿Cuántos logros has conseguido? (0 a 34): "))
     os.system('cls')
     while logros_conseguidos < 0 or logros_conseguidos > 34:
@@ -71,7 +72,7 @@ def pedir_logros()
         os.system('cls')
     return logros_conseguidos
 
-def pedir_finales()
+def pedir_finales():
     finales_conseguidos = int(input("¿Cuántos logros has conseguido? (0 a 4): "))
     os.system('cls')
     while finales_conseguidos < 0 or finales_conseguidos > 4:
@@ -80,10 +81,12 @@ def pedir_finales()
         os.system('cls')
     return finales_conseguidos
 
+#Guarda los logros y finales conseguidos de acuerdo a las funciones
 logros_conseguidos = pedir_logros()
 finales_conseguidos = pedir_finales()
 
-def progreso(logros,finales)
+#Funcion para decirle al usuario que tanto ha progresado
+def progreso(logros,finales):
     logros_faltantes = logros_totales - logros
     finales_faltantes = finales_totales - finales
 
@@ -98,20 +101,29 @@ def progreso(logros,finales)
 
     else:
         print("No se que hiciste, pero esto no es posible ")
-        
+
+#Define los valores que se usaran en la funcion (progreso)        
 progreso(logros_conseguidos, finales_conseguidos )
 
-# Siento que está muy vacío, así que voy a calcular el porcentaje de progreso.
-def porcentaje(logros)
+#En caso de que el usuario ya haya completado el juego, para no mostrar que le falta
+if logros_conseguidos != 34:
+    print("Haz conseguido", logros_conseguidos,"logros y", finales_conseguidos,"finales")
+
+
+#Funcion para el porcentaje
+def porcentaje(logros):
     porcentaje_juego = (logros / logros_totales) * 100
     print("Haz completado el %.2f" % (porcentaje_juego),"% del juego"  )
     
 
 #El porcentaje de finales realmente no es necesario, ya que cada final tiene un logro#
 if logros_conseguidos != logros_totales:
-    porcentaje(logros-conseguidos)
 
-#Hasta ahora es un codigo muy sencillo y poco util, pero creo que es suficiente para el avance 2#
+#Define el valor que se usara en la funcion (porcentaje)
+    porcentaje(logros_conseguidos)
+
+#Es basicamente lo mismo que esta en el avance 2, solo que ahora todo esta dentro de funciones :D
+
 
 
 
