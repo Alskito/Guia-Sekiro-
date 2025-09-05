@@ -73,11 +73,11 @@ def pedir_logros():
     return logros_conseguidos
 
 def pedir_finales():
-    finales_conseguidos = int(input("¿Cuántos logros has conseguido? (0 a 4): "))
+    finales_conseguidos = int(input("¿Cuántos finales has conseguido? (0 a 4): "))
     os.system('cls')
     while finales_conseguidos < 0 or finales_conseguidos > 4:
         print("Eso no es posible")
-        finales_conseguidos = int(input("¿Cuántos logros has conseguido? (0 a 4): "))
+        finales_conseguidos = int(input("¿Cuántos finales has conseguido? (0 a 4): "))
         os.system('cls')
     return finales_conseguidos
 
@@ -123,6 +123,7 @@ if logros_conseguidos != logros_totales:
     porcentaje(logros_conseguidos)
 
 #Es basicamente lo mismo que esta en el avance 2, solo que ahora todo esta dentro de funciones :D
+
 
 
 
