@@ -122,7 +122,7 @@ if logros_conseguidos != logros_totales:
 #Define el valor que se usara en la funcion (porcentaje)
     porcentaje(logros_conseguidos)
 
-#Es basicamente lo mismo que esta en el avance 2, solo que ahora todo esta dentro de funciones :D
+# Realmente mi codigo ya tiene estrucutras de decisión, por lo que no se que hacer.
 
 
 
