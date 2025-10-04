@@ -58,73 +58,92 @@ Objetivo_actual: (Que final se quiere conseguir)
 
 import os
 
-logros_totales = 34
-finales_totales = 4
+# Lista de los logros totales
+logros_totales = [
+    "Man Without Equal", "Ashina Traveler", "Master of the Prosthetic", "Height of Technique", "All Prosthetic Tools",
+    "All Ninjutsu Techniques", "Peak Physical Strength", "Ultimate Healing Gourd", "Sword Saint, Isshin Ashina",  "Master of the Arts", 
+    "Lazuline Upgrade", "Revered Blade", "Shinobi Prosthetic", "Memorial Mob",  "Resurrection", 
+    "Gyoubu Masataka Oniwa", "The Phantom Lady Butterfly", "Genichiro Ashina", "Guardian Ape",  "Guardian Ape Immortality Severed", 
+    "Folding Screen Monkeys", "Great Shinobi  - Owl", "Father Surpassed", "Corrupted Monk",  "Gracious Gift of Tears", 
+    "Isshin Ashina", "Demon of Hatred", "Great Serpent", "Great Colored Carp"
+]
 
-#Funciones para pedir la cantidad de logros y finales que ya se consiguieron
-#Bastante inutiles desde mi punto de vista pero pus funciones
-def pedir_logros():
-    logros_conseguidos = int(input("¿Cuántos logros has conseguido? (0 a 34): "))
-    os.system('cls')
-    while logros_conseguidos < 0 or logros_conseguidos > 34:
-        print("Eso no es posible")
-        logros_conseguidos = int(input("¿Cuántos logros has conseguido? (0 a 34): "))
-        os.system('cls')
+# Chiqui lista de los finales
+finales = ["Shura", "Purification", "Return", "Immortal Severed"]
+
+# Pregunta que finales ya se consiguieron y se añaden como logros a un lista nueva llama logros_conseguidos
+def pedir_finales(logros_conseguidos):
+    print("Primero, qué finales ya conseguiste?")
+    for final in finales:
+        respuesta = input("¿Has conseguido el final " + final + "? (s/n): ").lower()
+        os.system("cls")
+        while respuesta not in ["s", "n"]:
+            os.system("cls")
+            respuesta = input("Responde 's' o 'n'. ¿Has conseguido el final " + final + " ? (s/n): ").lower()
+            os.system("cls")
+        if respuesta == "s":
+            logros_conseguidos.append(final)
+
+# Condicionales para que si ya consiguio un final, se añadan automaticamente los logros que se obtendrian por default 
+    if any(final in logros_conseguidos for final in finales):
+        logros_conseguidos.extend([logros_totales[8],logros_totales[11], logros_totales[12], logros_totales[15],logros_totales[17], logros_totales[18], 
+        logros_totales[20]])
+
+    if finales[1] in logros_conseguidos or finales[2] in logros_conseguidos or finales[3] in logros_conseguidos:
+        logros_conseguidos.extend([logros_totales[21], logros_totales[23],logros_totales[24]])
+
+    if "Shura" in logros_conseguidos:
+        logros_conseguidos.extend([logros_totales[25]])
+        
+    if "Purification" in logros_conseguidos:
+        logros_conseguidos.extend([logros_totales[22]])
+
+    if  "Return" in logros_conseguidos:
+        logros_conseguidos.extend([logros_totales[27]]) 
+
+    os.system("cls")
     return logros_conseguidos
 
-def pedir_finales():
-    finales_conseguidos = int(input("¿Cuántos finales has conseguido? (0 a 4): "))
+# Pregunta que logros ya conseguiste y los añade a logros_conseguidos
+def pedir_logros(logros_conseguidos):
+    print("Ahora vamos a registrar los logros.")
+         
+    for logro in [logros for logros in logros_totales if logros not in logros_conseguidos]:
+        respuesta = input("¿Has conseguido " + logro + "? (s/n): ").lower()
+        os.system("cls")
+        while respuesta not in ["s", "n"]:
+                os.system("cls")
+                respuesta = input("Responde 's' o 'n'. ¿Has conseguido el final " + logro + " ? (s/n): ").lower()
+                os.system("cls")
+        if respuesta == "s":
+            logros_conseguidos.append(logro)
+             
     os.system('cls')
-    while finales_conseguidos < 0 or finales_conseguidos > 4:
-        print("Eso no es posible")
-        finales_conseguidos = int(input("¿Cuántos finales has conseguido? (0 a 4): "))
-        os.system('cls')
-    return finales_conseguidos
+    return logros_conseguidos
 
-#Guarda los logros y finales conseguidos de acuerdo a las funciones
-logros_conseguidos = pedir_logros()
-finales_conseguidos = pedir_finales()
-
-#Funcion para decirle al usuario que tanto ha progresado
-def progreso(logros,finales):
-    logros_faltantes = logros_totales - logros
-    finales_faltantes = finales_totales - finales
-
-    if logros_conseguidos == logros_totales and finales_conseguidos == finales_totales:
-        print("Felicidades lograste completar Sekiro al 100%, ahora ve y completa Dark souls 3 idk")
-          
-    elif logros_conseguidos != logros_totales and finales_conseguidos == finales_totales:
-        print("Ya completaste todos los finales, pero todavia te faltan conseguir",logros_faltantes,"logros")
-          
-    elif logros_conseguidos != logros_totales and finales_conseguidos != finales_totales:
-        print("Te faltan", logros_faltantes,"logros y",finales_faltantes,"finales")   
-
-    else:
-        print("No se que hiciste, pero esto no es posible ")
-
-#Define los valores que se usaran en la funcion (progreso)        
-progreso(logros_conseguidos, finales_conseguidos )
-
-#En caso de que el usuario ya haya completado el juego, para no mostrar que le falta
-if logros_conseguidos != 34:
-    print("Haz conseguido", logros_conseguidos,"logros y", finales_conseguidos,"finales")
-
-
-#Funcion para el porcentaje
-def porcentaje(logros):
-    porcentaje_juego = (logros / logros_totales) * 100
-    print("Haz completado el %.2f" % (porcentaje_juego),"% del juego"  )
+# Muestra cuantos logros ya completaste, cuales te faltan y el porcentaje del progreso
+def mostrar_progreso(logros_conseguidos):
+    logros_faltantes =  [logros for logros in logros_totales + finales if logros not in logros_conseguidos]
     
+    print("\nHas conseguido ", len(logros_conseguidos)," de ",len(logros_totales) + len(finales)," logros.")
+    
+    if len(logros_totales) + len(finales) - len(logros_conseguidos) != 0:
+        print("\nTe faltan los siguientes logros:")
+        for logros in logros_faltantes:
+            print("-", logros)
+    else:
+        print("\n¡Felicidades! Completaste el juego al 100%")
 
-#El porcentaje de finales realmente no es necesario, ya que cada final tiene un logro#
-if logros_conseguidos != logros_totales:
+    porcentaje = (len(logros_conseguidos) / (len(logros_totales) + len(finales))) * 100
+    print("\nPorcentaje de logros completados: %.2f" % porcentaje)
 
-#Define el valor que se usara en la funcion (porcentaje)
-    porcentaje(logros_conseguidos)
+# llama a las funciones
 
-# Realmente mi codigo ya tiene estrucutras de decisión, por lo que no se que hacer.
+logros_conseguidos = []
+logros_conseguidos = pedir_finales(logros_conseguidos)
+logros_conseguidos = pedir_logros(logros_conseguidos)
+mostrar_progreso(logros_conseguidos)
 
 
-
-
+# Hacer este avance tomo demasiadas horas, odio las listas, probablemente matrices me terminen de matar
 
