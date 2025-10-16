@@ -1,5 +1,5 @@
-# Guia-Sekiro-
-El punto de este proyecto es crear un algoritmo el cual sirva como una especie de guía para completar y conseguir todos los logros de Sekiro. Puede parecer algo sencillo de hacer, pero después de pensarlo un buen rato me di cuenta de que era más complicado de lo que parecía. El juego cuenta con 34 logros(Tecnicamente 33), cada uno requiere algo diferente para completarse. Cuatro de estos logros son conseguir los finales del juego, por lo que hay demasiados factores a tener en cuenta a la hora de hacer el algoritmo.
-Por ejemplo: ¿es la primera playthrough del usuario? Si ese es el caso, tendría que matar a todos los jefes del juego para conseguir sus logros. En caso de que ya se haya jugado el juego, hay que ver qué jefes ya fueron derrotados. En caso de que ya se haya completado el juego una vez, ¿qué final hizo? Hay demasiados factores que a simple vista no te das cuenta, por lo que creo que podría ser un proyecto bastante interesante.
-
-El algoritmo lo escribi en el archivo .py
+# Tracker-Sekiro
+Contexto
+Este programa es un tracker de logros para Sekiro: Shadows Die Twice, hecho en Python. Su función es ayudar al jugador a llevar un registro de los logros que ya consiguió y los que todavía le faltan.
+Cuando el programa se ejecuta, le pregunta al usuario qué finales del juego ya completó y qué logros ha obtenido. Dependiendo de sus respuestas, va guardando esa información y actualiza automáticamente algunos logros relacionados (por ejemplo, si completas un final, también marca los jefes que se derrotan en ese camino).
+Después, el programa muestra un resumen del progreso, indicando cuántos logros se han conseguido, cuáles faltan y el porcentaje total completado.
