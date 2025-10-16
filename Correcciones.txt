@@ -1,0 +1,135 @@
+
+============================ Avance 2.1 Guia_Sekiro.py =====================================
+Sub-Competencia: 
+	Avance 2: Incorpora a tu proyecto libre operaciones con operadores.
+
+Error original: Se errores con los while, if y prints (Hay varios errores, los de abajo no son todos)
+
+	while logros_conseguidos < 0 or >34
+		print("eso no es posible")
+
+	elif logros_conseguidos != logros_totales and finales_conseguidos != finales_totales
+
+	print("Haz completado el",porcentaje_juego,"% del juego"  )
+
+Cambio realizado: Corregí los if, whiles y prints
+
+	while logros_conseguidos < 0 or logros_conseguidos > 34:
+    		print("Eso no es posible")
+
+	elif logros_conseguidos != logros_totales and finales_conseguidos != finales_totales:
+	
+	print("Haz completado el %.2f" % (porcentaje_juego),"% del juego"  )
+
+Líneas de código donde se ve la corrección: 69 a 110
+
+
+
+============================ Avance 2.2 Guia_Sekiro.py =====================================
+Sub-Competencia: 
+	Avance 2: Incorpora a tu proyecto libre operaciones con operadores.
+
+
+Cambio realizado: Se eliminaron prints que no me gustaron, al igual que algunos espacios
+
+
+============================ Avance 2. Final Guia_Sekiro.py =====================================
+Sub-Competencia: 
+	Avance 2: Incorpora a tu proyecto libre operaciones con operadores.
+
+
+Cambio realizado: Elimine unos comentarios
+
+
+============================ Avance 3 Guia_Sekiro.py =====================================
+Sub-Competencia: 
+	 Avance 3: Incorpora a tu proyecto libre uso de funciones.
+
+Error original: Todo el código estaba amontonado
+
+
+Cambio realizado: Cree 3 funciones
+- def pedir_logros()
+- def progreso(logros,finales)
+- def porcentaje(logros)
+
+
+Líneas de código donde se ve la corrección: 
+- def pedir_logros() 65 a 81
+- def progreso(logros,finales) 86 a 100
+- def porcentaje(logros) 105 a 112
+
+============================ Avance 3 final Guia_Sekiro.py =====================================
+Sub-Competencia: 
+	 Avance 3: Incorpora a tu proyecto libre uso de funciones.
+
+Error original: Faltaban los 2 puntos en la funciones 
+
+	def pedir_finales()
+
+Cambio realizado: se añadieron los : y también comentarios
+
+	def pedir_finales():
+
+
+Líneas de código donde se ve la corrección: 
+- def pedir_logros() 65
+- def progreso(logros,finales) 75
+- def porcentaje(logros) 86
+
+============================ Avance 3 final ahora si Guia_Sekiro.py =====================================
+Sub-Competencia: 
+	 Avance 3: Incorpora a tu proyecto libre uso de funciones.
+
+
+Cambio realizado: se añadieron los : y también comentarios
+
+	Se cambiaron unos strings
+
+
+Líneas de código donde se ve la corrección: 76 y 80
+
+
+============================ Avance 4 Guia_Sekiro.py =====================================
+Sub-Competencia: 
+	 Avance 4: Incorpora a tu proyecto libre estrucutras de decisión.
+
+
+Cambio realizado: Se añadieron comentarios
+
+
+============================ Avance 6 Guia_Sekiro.py =====================================
+Sub-Competencia: 
+	 Avance 6: Incorpora a tu proyecto libre listas(arreglos)
+
+Cambio realizado: Se remplazaron las 2 de las 3 variables, se añadieron listas con todos los logros y finales y también se añadieron ciclos for
+
+	def pedir_logros()
+	def pedir_logros(logros_conseguidos):
+	def mostrar_progreso(logros_conseguidos):
+
+Líneas de código donde se ve la corrección: Todo el código
+
+
+ 
+
+============================ Avance 7 Guia_Sekiro.py =====================================
+Sub-Competencia: 
+	 Avance 7: Incorpora a tu proyecto listas anidadas (o matrices).
+
+Cambio realizado: Se cambio la lista logros_totales por logros_sin_finales y se agrego la lista anidada logros_totales.
+		  Se hicieron cambios en el código porque los nombres de las variables cambiaron
+
+	
+Líneas de código donde se ve la corrección: Todo el código
+
+============================ Tracker_Sekiro.py =====================================
+Sub-Competencia: 
+	 Todo lo aprendido
+
+Cambio realizado: Básicamente se cambio todo el código para que siga las reglas pep8, se agrego un menu, se agregaron nuevas listas y bibliotecas
+para manejar mejor los logros y se agrego un sistema que añade los logros que son necesarios para obtener otros automaticamente
+
+	
+Líneas de código donde se ve la corrección: TODO EL CODIGO
+
