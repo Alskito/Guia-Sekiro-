@@ -1,9 +1,12 @@
 
+Estos son todos los cambios que realicé a lo largo del proyecto. La mayoría son cambios sobre cosas que sencillamente no me gustaron, por lo que representan cambios minúsculos como agregar comentarios o cambiar algunos strings, mientras que otros literalmente reescriben todo el código.
+
+
 ============================ Avance 2.1 Guia_Sekiro.py =====================================
 Sub-Competencia: 
 	Avance 2: Incorpora a tu proyecto libre operaciones con operadores.
 
-Error original: Se errores con los while, if y prints (Hay varios errores, los de abajo no son todos)
+Error original: Errores con los while, if y prints (Hay varios errores, los de abajo no son todos)
 
 	while logros_conseguidos < 0 or >34
 		print("eso no es posible")
@@ -30,7 +33,9 @@ Sub-Competencia:
 	Avance 2: Incorpora a tu proyecto libre operaciones con operadores.
 
 
-Cambio realizado: Se eliminaron prints que no me gustaron, al igual que algunos espacios
+Cambio realizado: Se eliminaron prints que no me gustaron, al igual que algunos espacios y comentarios.
+	
+Líneas de código donde se ve la corrección: 69, 97, 101, 110 a 112 
 
 
 ============================ Avance 2. Final Guia_Sekiro.py =====================================
@@ -38,8 +43,9 @@ Sub-Competencia:
 	Avance 2: Incorpora a tu proyecto libre operaciones con operadores.
 
 
-Cambio realizado: Elimine unos comentarios
+Cambio realizado: Añadí unos comentarios
 
+Líneas de código donde se ve la corrección: 69 y 111 
 
 ============================ Avance 3 Guia_Sekiro.py =====================================
 Sub-Competencia: 
@@ -48,15 +54,17 @@ Sub-Competencia:
 Error original: Todo el código estaba amontonado
 
 
-Cambio realizado: Cree 3 funciones
-- def pedir_logros()
+Cambio realizado: Cree 4 funciones
+- def pedir_logros()}
+- def pedir_finales()
 - def progreso(logros,finales)
 - def porcentaje(logros)
 
 
 Líneas de código donde se ve la corrección: 
-- def pedir_logros() 65 a 81
-- def progreso(logros,finales) 86 a 100
+- def pedir_logros() 65 a 72
+- def pedir_finales() 74 a 81
+- def progreso(logros,finales) 86 a 102
 - def porcentaje(logros) 105 a 112
 
 ============================ Avance 3 final Guia_Sekiro.py =====================================
@@ -72,19 +80,18 @@ Cambio realizado: se añadieron los : y también comentarios
 	def pedir_finales():
 
 
-Líneas de código donde se ve la corrección: 
-- def pedir_logros() 65
-- def progreso(logros,finales) 75
-- def porcentaje(logros) 86
+Líneas de código donde se ve la corrección:  64 a 66, 84, 88, 105, 108 a 110 y 122 a 125
+- def pedir_logros() 66
+- def pedir_finales() 75
+- def progreso(logros,finales) 89
+- def porcentaje(logros) 114
 
 ============================ Avance 3 final ahora si Guia_Sekiro.py =====================================
 Sub-Competencia: 
 	 Avance 3: Incorpora a tu proyecto libre uso de funciones.
 
 
-Cambio realizado: se añadieron los : y también comentarios
-
-	Se cambiaron unos strings
+Cambio realizado: Se cambiaron unos strings
 
 
 Líneas de código donde se ve la corrección: 76 y 80
@@ -92,23 +99,24 @@ Líneas de código donde se ve la corrección: 76 y 80
 
 ============================ Avance 4 Guia_Sekiro.py =====================================
 Sub-Competencia: 
-	 Avance 4: Incorpora a tu proyecto libre estrucutras de decisión.
+	 Avance 4: Incorpora a tu proyecto libre estructuras de decisión.
 
 
-Cambio realizado: Se añadieron comentarios
+Cambio realizado: Se añadió un comentarios
 
+Líneas de código donde se ve la corrección: 125
 
 ============================ Avance 6 Guia_Sekiro.py =====================================
 Sub-Competencia: 
 	 Avance 6: Incorpora a tu proyecto libre listas(arreglos)
 
-Cambio realizado: Se remplazaron las 2 de las 3 variables, se añadieron listas con todos los logros y finales y también se añadieron ciclos for
-
+Cambio realizado: Se remplazaron la mayoría de las variables, se añadieron listas con todos los logros y finales y también se añadieron ciclos for
+	def pedir_finales()
 	def pedir_logros()
 	def pedir_logros(logros_conseguidos):
 	def mostrar_progreso(logros_conseguidos):
 
-Líneas de código donde se ve la corrección: Todo el código
+Líneas de código donde se ve la corrección: 61 a 148
 
 
  
@@ -121,15 +129,23 @@ Cambio realizado: Se cambio la lista logros_totales por logros_sin_finales y se 
 		  Se hicieron cambios en el código porque los nombres de las variables cambiaron
 
 	
-Líneas de código donde se ve la corrección: Todo el código
+Líneas de código donde se ve la corrección: 62, 74 a 76, 92 a 93, 96, 99, 102, 105, 114, 129 a 131, 133 a 135, 142 y 152 a 154
+
+
 
 ============================ Tracker_Sekiro.py =====================================
-Sub-Competencia: 
-	 Todo lo aprendido
 
-Cambio realizado: Básicamente se cambio todo el código para que siga las reglas pep8, se agrego un menu, se agregaron nuevas listas y bibliotecas
-para manejar mejor los logros y se agrego un sistema que añade los logros que son necesarios para obtener otros automaticamente
+Cambio realizado: Se cambió el nombre a Tracker_Sekiro, ya que es un nombre más adecuado para lo que hace el programa. Básicamente, se cambió todo el código para que siga las reglas PEP 8, se agregó un menú, se agregaron nuevas listas y diccionarios (como logros_dependientes) para manejar mejor los logros y se agregó un sistema que añade automáticamente los logros que son necesarios para obtener otros.
 
 	
-Líneas de código donde se ve la corrección: TODO EL CODIGO
+Líneas de código donde se ve la corrección: TODO EL CODIGO (60 a 286)
+
+
+
+============================ Tracker_Sekiro.py =====================================
+
+Cambio realizado: Se elimino el algoritmo al comienzo del código y se movio al arhivo README, se corrigio el código para que siga los lineamientos del PEP8 y también se creo una nueva función llamada limpiar, que hace que el código sea compatible con Linux y Mac
+
+Líneas de código donde se ve la corrección: 1, 5 a 34, 44 a 45, 50 a 51, 56, 78, 81 a 83, 92 a 93, 101 a 102, 106, 113 a 119, 149, 157 a 159, 162 a 164, 173, 182, 186, 195 a 196, 211 a 233, 239 y 259
+
 
