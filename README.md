@@ -1,5 +1,5 @@
 # Tracker-Sekiro
-### Contexto:
+### Contexto
 Sekiro: Shadows Die Twice es un videojuego desarrollado por FromSoftware y lanzado en 2019. En este juego, controlas a "Wolf", un shinobi que se embarca en la misión de rescatar a su señor. El juego es considerado "difícil" y requiere de bastante esfuerzo para conseguir todos los logros, siendo estos un total de 34 (uno de los cuales es conseguir todos los logros).
 
 Este programa es un tracker de los logros del juego. Al correr el programa, se despliega un menú en el que se le da la opción al usuario de ver su progreso o de actualizarlo. En caso de que decida actualizar su progreso, se le preguntará al usuario qué logros y finales ya consiguió. Si decide ver su progreso, se le dirá al usuario cuántos logros ya consiguió, cuáles le faltan y el porcentaje de completación.
@@ -15,7 +15,7 @@ Para usar el menú, simplemente usa los números asignados a cada opción y sigu
 ### Logaritmo
 El codigo final termino muy diferente al del algoritmo del avance 1.
 
-###Actual:
+### Actual:
 
 ```
 Inicio algoritmo
@@ -53,7 +53,7 @@ Termina el programa
 Fin del algoritmo
 ```
 
-###Original: 
+### Original: 
 
 ```
 Inicio algoritmo
@@ -99,6 +99,6 @@ Inicio algoritmo
 Fin del algoritmo
 ```
 
-###Imports
+### Imports
 Para este proyecto se importó `os`, el cual se utiliza para interactuar con el sistema operativo. 
 solo lo utilice para limpiar la consola y que todo se vea más limpio: primero se utiliza `os.name` para verificar qué sistema operativo se está usando; en caso de que el código se corra en Windows, se utiliza el comando `os.system('cls')` para limpiar la consola; en caso de que se use en cualquier otro sistema operativo, se usa el comando `os.system('clear')`.
