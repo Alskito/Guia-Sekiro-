@@ -6,10 +6,13 @@ Este programa es un tracker de los logros del juego. Al correr el programa, se d
 
 ### Instrucciones
 Descarga el archivo y correlo en la terminal con:
-  `python Tracker_Sekiro.py`
+
+`python Tracker_Sekiro.py`
 
 El código se probó en Windows y, en teoría, debería ser funcional tanto en Linux como en Mac. Sin embargo, no sé cuál es el comando para correr el código en esos sistemas y tampoco fue probado en ellos, por lo que preferiría que solo se use con Windows.
+
 NO USAR THONNY, ya que no permite limpiar la consola.
+
 Para usar el menú, simplemente usa los números asignados a cada opción y sigue las instrucciones del programa.
 
 ### Logaritmo
@@ -101,4 +104,6 @@ Fin del algoritmo
 
 ### Imports
 Para este proyecto se importó `os`, el cual se utiliza para interactuar con el sistema operativo. 
-solo lo utilice para limpiar la consola y que todo se vea más limpio: primero se utiliza `os.name` para verificar qué sistema operativo se está usando; en caso de que el código se corra en Windows, se utiliza el comando `os.system('cls')` para limpiar la consola; en caso de que se use en cualquier otro sistema operativo, se usa el comando `os.system('clear')`.
+solo lo utilice para limpiar la consola y que todo se vea más limpio: 
+
+Primero se utiliza `os.name` para verificar qué sistema operativo se está usando; en caso de que el código se corra en Windows, se utiliza el comando `os.system('cls')` para limpiar la consola; en caso de que se use en cualquier otro sistema operativo, se usa el comando `os.system('clear')`.
