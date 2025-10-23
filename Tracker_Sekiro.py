@@ -1,71 +1,3 @@
-"""
-Algoritmo para conseguir todos los logros de sekiro
-
-#variables que voy a usar(probablemente añada mas en el futuro)#
-
-logros_completados: (Que logros ya se consiguieron)
-logros_faltantes: (Que logros faltan por conseguir)
-finales_completados: (Que finales ya se complearon, en total son 4)
-Objetivo_actual: (Que final se quiere conseguir)
-
-
-#Ahora si el algoritmo#
-
-1. Preguntar al usuario si es su primera partida
--Si si
-    2. Completar el juego
-    3. Matar a todos lo jefes principales
-    4. Conseguir algun final
-    5. Agregar en la variable que logros ya fueron logros_completados
-    6. Agregar en la variable que final fue conseguido
-
--Si no
-# Aquí podría usar un ciclo while
-ya que la variable no debe tener un valor mayor que 4 ni menor que 0.
-# En caso de usar strings, no debe haber un nombre distinto de los 4 finales
-    2. preguntar al usuario que finales ya completo
-        Agregar en la variable que final fue conseguido
-    3. Ver que finales faltan por hacer
-        - Final Shura
-        - Final Purificación
-        - Final Retorno
-        - Final Inmortal Severed
-    4. Preguntar al usuario que final quiere hacer ahora
-        Guardar su respuesta en la variable
-
-5. Generar la lista de logros faltantes comparando con los logros que ya se consiguieron
-6. Clasificar los logros en categorias
-    -Derrota de jefes principales y opcionales
-   - Obtención de herramientas prostéticas
-   - Mejoras de herramientas prostéticas
-   - Habilidades desbloqueadas (árbol de habilidades)
-   - Recolección de objetos clave (semillas de calabaza, cuentas de oración, etc.)
-   - Logros relacionados con los diferentes finales
-
-7. De acuerdo a los logros faltantes se sugiriria la ruta mas eficiente
-Personalmente, yo ya complete el juego al 100%
-por lo que se cuales son las maneras mas eficientes de conseguir los logros >:D#
-    -Que permita obtener el final que eligieron
-    -Evitar repetir logros que ya se consiguieron
-    -Recomendar la ruta que permita conseguir la mayor cantidad de logros
-
-8. Terminar la partida
-9. Actualizar la variable de logros completados
-10. Repetir los pasos hasta que la variable de logros faltantes este completa
-11. Felicitar al usuario por todo el sufrimiento por el que tuvo que pasar
-
-#Fin del algoritmo#
-"""
-
-"""
-(づ ᴗ _ᴗ)づ Proyecto python
-Tracker de los logros obtenidos en sekiro
-El programa le pregunta al usuario que logros a conseguido
-dependiendo de sus respuestas le dice que logros le faltan
-y que tanto del juego a completado
-"""
-
-
 import os
 """
 ================== Listas  =======================================
@@ -75,14 +7,31 @@ LOGROS_SIN_FINALES = [
     "Sword Saint, Isshin Ashina",
     "Height of Technique",
     "Master of the Prosthetic",
-    "Ashina Traveler", "All Prosthetic Tools", "All Ninjutsu Techniques",
-    "Peak Physical Strength", "Ultimate Healing Gourd", "Master of the Arts",
-    "Lazuline Upgrade", "Revered Blade", "Shinobi Prosthetic", "Memorial Mob",
-    "Resurrection", "Gyoubu Masataka Oniwa", "The Phantom Lady Butterfly",
-    "Genichiro Ashina", "Guardian Ape", "Guardian Ape Immortality Severed",
-    "Folding Screen Monkeys", "Great Shinobi - Owl", "Father Surpassed",
-    "Corrupted Monk", "Gracious Gift of Tears", "Isshin Ashina",
-    "Demon of Hatred", "Great Serpent", "Great Colored Carp"
+    "Ashina Traveler",
+    "All Prosthetic Tools",
+    "All Ninjutsu Techniques",
+    "Peak Physical Strength",
+    "Ultimate Healing Gourd",
+    "Master of the Arts",
+    "Lazuline Upgrade",
+    "Revered Blade",
+    "Shinobi Prosthetic",
+    "Memorial Mob",
+    "Resurrection",
+    "Gyoubu Masataka Oniwa",
+    "The Phantom Lady Butterfly",
+    "Genichiro Ashina",
+    "Guardian Ape",
+    "Guardian Ape Immortality Severed",
+    "Folding Screen Monkeys",
+    "Great Shinobi - Owl",
+    "Father Surpassed",
+    "Corrupted Monk",
+    "Gracious Gift of Tears",
+    "Isshin Ashina",
+    "Demon of Hatred",
+    "Great Serpent",
+    "Great Colored Carp"
 ]
 
 FINALES = ["Shura", "Purification", "Return", "Immortal Severed"]
@@ -92,17 +41,19 @@ LOGROS_TOTALES = [LOGROS_SIN_FINALES, FINALES]
 """
 ================== Funciones  =======================================
 """
+
+
 def pedir_finales(logros_conseguidos):
     """
     Recibe: la lista logros_conseguidos
     Pregunta por los finales que el usuario ha conseguido.
-    Añade los finales conseguidos a la lista logros_conseguidos 
-    Dependiendo del final que haya conseguido, se añaden 
+    Añade los finales conseguidos a la lista logros_conseguidos
+    Dependiendo del final que haya conseguido, se añaden
     los logros correspondientes a la lista logros_conseguidos
     Por último, devuelve la lista logros_conseguidos.
     """
-    
-    os.system("cls")
+
+    limpiar()
     print("--- Finales Conseguidos ---")
     print("Primero, ¿qué finales ya conseguiste?")
 
@@ -124,11 +75,12 @@ def pedir_finales(logros_conseguidos):
         if final not in logros_conseguidos:
             respuesta = input(
                 f"¿Has conseguido el final '{final}'? (s/n): ").lower()
-            os.system("cls")
+            limpiar()
             while respuesta not in ["s", "n"]:
                 respuesta = input(
-                    f"Responde 's' o 'n'. ¿Has conseguido el final '{final}'? (s/n): ").lower()
-                os.system("cls")
+                    f"Responde 's' o 'n'"
+                    f" ¿Has conseguido el final '{final}'? (s/n): ").lower()
+                limpiar()
             if respuesta == "s":
                 logros_conseguidos.append(final)
 
@@ -137,7 +89,8 @@ def pedir_finales(logros_conseguidos):
                         logros_conseguidos.append(logro)
 
                 if final == "Shura":
-                    if logros_unicos_final["Shura"][0] not in logros_conseguidos:
+                    if (logros_unicos_final["Shura"][0]
+                        not in logros_conseguidos):
                         logros_conseguidos.append(
                             logros_unicos_final["Shura"][0])
                 else:
@@ -145,23 +98,25 @@ def pedir_finales(logros_conseguidos):
                         if logro not in logros_conseguidos:
                             logros_conseguidos.append(logro)
                     if final in logros_unicos_final:
-                        if logros_unicos_final[final][0] not in logros_conseguidos:
+                        if (logros_unicos_final[final][0]
+                            not in logros_conseguidos):
                             logros_conseguidos.append(
                                 logros_unicos_final[final][0])
 
-    os.system("cls")
+    limpiar()
     return logros_conseguidos
 
 
 def pedir_logros(logros_conseguidos):
     """
     Recibe: la lista logros_conseguidos
-    Pregunta por los logros que el usuario ha conseguido. 
-    Añade un diccionario llamado logros_dependientes; 
-    éste contiene los logros que requieren de otros para ser obtenidos. 
-    Añade a la lista logros_conseguidos los logros que consiguió el usuario. 
-    En caso de que se haya conseguido un logro dependiente, 
-    se añaden los logros correspondientes. 
+    Pregunta por los logros que el usuario ha conseguido.
+    Añade un diccionario llamado logros_dependientes;
+    éste contiene los logros que requieren de otros para ser obtenidos.
+    Añade a la lista logros_conseguidos los logros
+    que consiguió el usuario.
+    En caso de que se haya conseguido un logro dependiente,
+    se añaden los logros correspondientes.
     Por último, devuelve la lista logros_conseguidos.
     """
     logros_dependientes = {
@@ -191,7 +146,7 @@ def pedir_logros(logros_conseguidos):
             "All Prosthetic Tools",
             "Lazuline Upgrade"]}
 
-    os.system("cls")
+    limpiar()
     print("--- Actualizar Logros ---")
     print("Vamos a registrar tus logros.")
 
@@ -199,12 +154,14 @@ def pedir_logros(logros_conseguidos):
         if logro in logros_conseguidos:
             continue
 
-        respuesta = input(f"¿Has conseguido '{logro}'? (s/n): ").lower()
-        os.system("cls")
+        respuesta = input(
+            f"¿Has conseguido el logro '{logro}'? (s/n): ").lower()
+        limpiar()
         while respuesta not in ["s", "n"]:
             respuesta = input(
-                f"Responde 's' o 'n'. ¿Has conseguido '{logro}'? (s/n): ").lower()
-            os.system("cls")
+                f"Responde 's' o 'n'."
+                f" ¿Has conseguido el logro '{logro}'? (s/n): ").lower()
+            limpiar()
 
         if respuesta == "s":
             logros_conseguidos.append(logro)
@@ -213,7 +170,7 @@ def pedir_logros(logros_conseguidos):
                     if sub_logro not in logros_conseguidos:
                         logros_conseguidos.append(sub_logro)
 
-    os.system("cls")
+    limpiar()
     return logros_conseguidos
 
 
@@ -222,11 +179,11 @@ def mostrar_progreso(logros_conseguidos):
     Recibe: la lista logros_conseguidos
     Crea una nueva lista llamada logros_faltantes
     que contiene los logros que no se encuentran en logros_conseguidos.
-    Tambien crea otra funcion llamada todos_los_logros que contiene
+    Tambien crea otra lista llamada todos_los_logros que contiene
     todos los logros.....
     por ultimo calcula el porcentaje de logros completados
     """
-    os.system("cls")
+    limpiar()
     print("--- Resumen de Progreso ---")
 
     todos_los_logros = LOGROS_TOTALES[0] + LOGROS_TOTALES[1]
@@ -235,7 +192,8 @@ def mostrar_progreso(logros_conseguidos):
     ]
 
     print(
-        f"\nHas conseguido {len(logros_conseguidos)} de {len(todos_los_logros)} logros.")
+        f"\nHas conseguido {len(logros_conseguidos)} "
+        f"de {len(todos_los_logros)} logros.")
 
     if not logros_faltantes:
         print("\n¡Felicidades! ¡Completaste el juego al 100%! ＼( ^▽^ )／")
@@ -250,13 +208,35 @@ def mostrar_progreso(logros_conseguidos):
 
 
 """
-================== Bucle principal  =======================================
+================== Funcion auxiliar  ============================
+"""
+
+
+def limpiar():
+    """
+    Esta funcion no recibe nada
+    Simplemente es para hacer el codigo compatble con linux y mac
+    En caso de que el usuario este en windows,
+    se usa el comando "os.system('cls')"
+    Si el usuario no esta en windows,
+    se usa el comando "os.system('clear')"
+    La funcion no regresa nada
+    """
+
+    if os.name == 'nt':
+        _ = os.system('cls')
+    else:
+        _ = os.system('clear')
+
+
+"""
+================== Bucle principal  ==================================
 """
 if __name__ == "__main__":
     logros_conseguidos = []
 
     while True:
-        os.system("cls")
+        limpiar()
         print("--- Tracker de Logros de Sekiro ---")
         print("(Si cierras el programa se reinicia el registro)")
         print("\nElige una opción:")
@@ -276,7 +256,7 @@ if __name__ == "__main__":
             mostrar_progreso(logros_conseguidos)
             input("\nPresiona Enter para volver al menú ˙ᴗ˙")
         elif opcion == '3':
-            os.system("cls")
+            limpiar()
             print("\nDONT YOU DARE GO HOLLOW")
             print("Juego equivocado (¯ . ¯٥)....")
             print("Buena suerte ")
